@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		*{margin: 0;padding: 0;}
+		.container{width: 1500px;height: 800px;margin: 100px auto 0 auto;
+		box-shadow: 0 0 10px red;overflow: hidden;position: relative;}
+		.tu{width: 13500px;height:800px;z-index: 1;position: absolute;
+		border:2px solid red;}
+		.container .tu img{width: 1500px;height: 800px; float:left;}
+		a{text-decoration: none;}
+		.container .arrow{width: 1500px; height: 800px;position: absolute;
+		font-size: 50px;z-index: 2;top: 40%;}
+		.container .arrow .arrow_left{float: left;}
+		.container .arrow .arrow_right{float: right ;}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="tu" style="left:0px;">
+				<img src="image\1.png"/>
+				<img src="image/3.gif"/>
+				<img src="image/4.jpg"/>
+				<img src="image/5.jpg"/>
+				<img src="image/6.gif"/>
+				<img src="image/7.gif"/>
+				<img src="image/8.gif"/>
+				<img src="image/9.gif"/>
+				<img src="image\100.jpg"/>
+			</div>
+			<div class="arrow">
+				<a href="#" class="arrow_left" onclick="per()"><</a>
+				<a href="#" class="arrow_right"  onclick="next()">></a>
+			</div>
+		</div>
+		<script>
+		var tuimg=document.querySelector(".tu");
+		function next(){
+			var newleft;
+			if(tuimg.style.left==="-12000px"){
+				newleft=0;
+			}
+			else{
+				newleft=parseInt(tuimg.style.left)-1500;
+			}
+			tuimg.style.left=newleft+"px";
+		}
+		function per(){
+			var newleft;
+			if(tuimg.style.left==="0px"){
+				newleft=-12000;
+				
+			}
+			else{
+				newleft=parseInt(tuimg.style.left)+1500;
+			}
+			tuimg.style.left=newleft+"px";
+		}
+		
+		</script>
+	</body>
+</html>

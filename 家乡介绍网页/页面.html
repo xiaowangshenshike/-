@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+
+	<style>
+			.swiper-contione {
+				width: 1060px;
+				height: 400px;
+				overflow: hidden;
+				margin: 20px auto;
+				position: relative;
+			}
+
+			.swiper {
+				width: 9999999px;
+				height: 400px;
+				transition: all 1s ease;
+				margin: 0;
+			}
+
+			.swiper-item {
+				width: 1060px;
+				height: 400px;
+				float: left;
+				position: relative;
+			}
+
+			.swiper-item img {
+				width: 1060px;
+				height: 400px;
+			}
+
+			.swiper-item p {
+				width: 100%;
+				height: 50px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: rgba(0, 0, 0, 0.5);
+				color: #fff;
+				text-align: center;
+				line-height: 50px;
+				cursor: pointer;
+				margin: 0;
+			}
+
+			.swiper-point {
+				width: 100%;
+				height: 40px;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				cursor: pointer;
+			}
+
+			.point {
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				background: rgba(0, 0, 0, 0.9);
+				margin-right: 5px;
+				float: left;
+			}
+
+			.point.active {
+				background: #fff;
+			}
+
+			.swiper-left {
+				width: 60px;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: -60px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: all 0.4s ease;
+			}
+
+			.swiper-right {
+				width: 60px;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				right: -60px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: all 0.4s ease;
+			}
+
+			.swiper-left img,
+			.swiper-right img {
+				cursor: pointer;
+			}
+
+			.swiper-contione:hover .swiper-left {
+				left: 0;
+			}
+
+			.swiper-contione:hover .swiper-right {
+				right: 0;
+			}
+		.f1 {
+
+			width: 200px;
+			font-size: 20px;
+			text-align: center;
+			position: relative;
+			padding: 25px 0;
+		}
+
+		.f1:hover ul {
+			display: block;
+			background-color: antiquewhite;
+		}
+
+		.div2 {
+			width: 1050px;
+			background-color: blanchedalmond;
+		}
+
+		.qb {
+			width: 1060px;
+			height: 1100px;
+			margin: auto
+		}
+
+		.img3 {
+			width: 1050px;
+			height: 160px;
+		}
+
+		.img4 {
+			width: 180px;
+			height: 100px
+		}
+
+		div {
+			margin: 5px;
+		}
+
+		.div1 {
+			width: 1050px;
+			height: 160px;
+		}
+
+		p {
+			margin-left: 10px
+		}
+
+		.a1 {
+			position: absolute;
+			bottom: 10px;
+			left: 55px;
+		}
+
+		.a2 {
+			position: absolute;
+			bottom: 10px;
+			right: 40px;
+		}
+
+		.div9 {
+			width: 1050px;
+			height: 900px;
+		}
+
+		.div10 {
+			width: 220px;
+			height: 800px;
+			float: left;
+			background-color: blanchedalmond;
+			margin-top: 10px;
+		}
+
+		.img1 {
+			width: 180px;
+			height: 100px;
+		}
+
+		.p5 {
+			font-size: 15px;
+			margin-left: 10px;
+			padding-bottom: 8px;
+			border-bottom: 1px dashed #00F;
+			width: 180px;
+		}
+
+		.div18 {
+			width: 570px;
+			height: 800px;
+			float: left;
+			margin-top: 10px;
+			background-color: blanchedalmond;
+		}
+
+		.div19 {
+			width: 560px;
+			height: 380px;
+			background-color: blanchedalmond;
+			margin-top: 10px;
+		}
+
+		.dt1 {
+			width: 173px;
+			height: 150px;
+		}
+
+		.dt1 {
+			float: left;
+		}
+
+		.img2 {
+			width: 173px;
+			height: 120px;
+		}
+
+		.sp1 {
+			text-align: center;
+			margin-top: 10px;
+		}
+
+		.a3 {
+			background-color: blanchedalmond;
+		}
+
+		.a4 {
+			background-color: blanchedalmond;
+			width: 230px;
+			float: right;
+			margin-top: 10px;
+			height: 335px;
+		}
+
+		.a5 {
+			background-color: blanchedalmond;
+			width: 230px;
+			float: right;
+			margin-top: 10px;
+			height: 450px;
+		}
+
+		.img6 {
+			width: 210px;
+			height: 190px;
+		}
+
+		ul li {
+			list-style: none;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		.er {
+			position: absolute;
+			background-color: rgb(55, 55, 55);
+			width: 180px;
+			text-align: center;
+			padding: 0;
+			left: 28px;
+			top: 75px;
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="qb">
+		<div class="swiper-contione">
+			<div class="swiper">
+				<div class="swiper-item">
+					<img src="./img/t1.png">
+					<p></p>
+				</div>
+				<div class="swiper-item">
+					<img src="img/t2.png">
+					<p></p>
+				</div>
+				<div class="swiper-item">
+					<img src="img/t3.png">
+					<p></p>
+				</div>
+				<div class="swiper-item">
+					<img src="img/t4.png">
+					<p></p>
+				</div>
+			</div>
+			<div class="swiper-point">
+				<div class="swiper-point-item">
+					<div class="point active"></div>
+					<div class="point"></div>
+					<div class="point"></div>
+					<div class="point"></div>
+				</div>
+			</div>
+			<div class="swiper-left">
+				<img src="./img/left.png">
+			</div>
+			<div class="swiper-right">
+				<img src="img/right.png">
+			</div>
+		</div>
+		<script type="text/javascript">
+			class Swiper {
+				constructor() {
+					this.w = $('.swiper-item').width();
+					this.num = 0;
+					this.len = $('.swiper .swiper-item').length - 1;
+					this.timer = null;
+				}
+				init() {
+					//设置定时器
+					this.setTime();
+					//滑上停止定时器
+					this.hover();
+					//点击指示
+					this.pointClick();
+					//点击左右箭头
+					this.lrClick();
+				}
+				setTime() {
+					this.timer = setInterval(() => {
+						this.num++;	
+						if (this.num > this.len) {
+							this.num = 0;
+						}
+						let cssTrx = -this.num * this.w;
+						$('.swiper-point-item .point').eq(this.num).addClass('active').siblings().removeClass('active');
+						$('.swiper').css({transform: `translateX(${cssTrx}px)`})
+					}, 3000)
+				}
+				hover() {
+					$('.swiper-contione').hover(() => {
+						clearInterval(this.timer)
+					}, () => {
+						this.setTime();
+					});
+				}
+				pointClick() {
+					let that = this;
+					$('.swiper-point-item .point').click(function() {
+						that.num = $(this).index();
+						let cssTrx = -that.num * that.w;
+						$(this).addClass('active').siblings().removeClass('active');
+						$('.swiper').css({
+							transform: `translateX(${cssTrx}px)`
+						})
+					})
+				}
+				lrClick() {
+					$('.swiper-left img').click(() => {
+						this.num--;
+						if (this.num < 0) {
+							this.num = this.len;
+						};
+						console.log(this.num)
+						let cssTrx = -this.num * this.w;
+						$('.swiper-point-item .point').eq(this.num).addClass('active').siblings().removeClass('active');
+						$('.swiper').css({
+							transform: `translateX(${cssTrx}px)`
+						})
+					});
+					
+					$('.swiper-right img').click(() => {
+						this.num++;
+						if (this.num > this.len) {
+							this.num = 0;
+						}
+						let cssTrx = -this.num * this.w;
+						$('.swiper-point-item .point').eq(this.num).addClass('active').siblings().removeClass('active');
+						$('.swiper').css({
+							transform: `translateX(${cssTrx}px)`
+						})
+					})
+				}
+			}
+			let sw = new Swiper();
+			sw.init();
+		</script>
+		<div class="div2">
+			<ul style="margin: 0;display: flex;justify-content: space-around; ">
+				<li class="f1"><a href="#">兴趣爱好</a>
+				</li>
+				<li class="f1"><a href="#">学校风光</a>
+					<ul class="er">
+						<li><a href="#">校园简介</a></li>
+						<li><a href="#">风光</a></li>
+					</ul>
+				</li>
+				<li class="f1"><a href="#">个人简历</a>
+					<ul class="er">
+						<li><a href="jia.html">家乡风光</a></li>
+						<li><a href="te.html">特产</a></li>
+						<li><a href="#">个人介绍</a></li>
+					</ul>
+				</li>
+				<li class="f1"><a href="#">喜欢的电影</a>
+
+				</li>
+				<li class="f1"><a href="#">喜欢的音乐</a></li>
+			</ul>
+		</div>
+		<div class="div9">
+			<div class="div10">
+				<div class="div13">
+					<p class="p4">兴趣爱好</p>
+				</div>
+				<div class="div14">
+					<p class="p5">篮球</p>
+					<img src="image\篮球.jpg" class="img1">
+					<p class="p5">乒乓球</p>
+					<img src="image\乒乓.jpg" class="img4">
+					<p class="p5">轮滑</p>
+					<img src="image\轮滑.jpg" class="img4">
+					<p class="p5">跑步</p>
+					<img src="image\01.jpg" class="img4">
+				</div>
+			</div>
+			<div class="div18">
+				<div class="div19">
+					<p class="p4">学校风光</p>
+					<div class="dt1"><img src="image\05.jpg" class="img2">
+						<p class="sp1"></p>
+					</div>
+					<div class="dt1"><img src="image\06.jpg" class="img2">
+						<p class="sp1"></p>
+					</div>
+					<div class="dt1"><img src="image\07.jpg" class="img2">
+						<p class="sp1"></p>
+					</div>
+					<div class="dt1"><img src="image\08.jpg" class="img2">
+						<p class="sp1"></p>
+					</div>
+					<div class="dt1"><img src="image\09.jpg" class="img2">
+						<p class="sp1"></p>
+					</div>
+					<div class="dt1"><img src="image\10.jpg" class="img2">
+						<p class="sp1"></p>
+					</div>
+				</div>
+				<div class="a3">
+					<p class="p4">喜欢的电影</p>
+					<div class="dt1"><img src="image\11.jpg" class="img2">
+						<p class="sp1"></p>
+					</div>
+					<div class="dt1"><img src="image\12.jpg" class="img2">
+						<p class="sp1"></p>
+					</div>
+					<div class="dt1"><img src="image\13.jpg" class="img2">
+						<p class="sp1"></p>
+					</div>
+					<div class="dt1"><img src="image\14.jpg" class="img2">
+						<p class="sp1"></p>
+					</div>
+					<div class="dt1"><img src="image/15.jpg" class="img2">
+						<p class="sp1"></p>
+					</div>
+					<div class="dt1"><img src="image\16.jpg" class="img2">
+						<p class="sp1"></p>
+					</div>
+				</div>
+			</div>
+			<div class="a5">
+				<p class="p4">个人简介：</p>
+				<p class="p4">姓名：刘阔</p>
+				<p class="p4">性别：男</p>
+				<p class="p4">民族：汉</p>
+				<p class="p4">生日：7月30日</p>
+				<p class="p4">籍贯：河北省衡水市</p>
+				<div class="dt1"><img src="image\17.jpg" class="img6">
+					<p class="sp1"></p>
+				</div>
+			</div>
+			<div class="a4">
+				<p class="p4">喜欢的音乐：</p>
+				<p class="p4">明天过后</p>
+				<!--				<audio src=""autoplay="autoplay" controls="controls" loop="loop"></audio>-->
+				<p class="p4">这就是爱</p>
+				<p class="p4">稻香</p>
+				<p class="p4">一曲相思</p>
+				<p class="p4">.....</p>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+
+</html>
